@@ -78,7 +78,7 @@ async def buttons(update, context):
         carts[user_id][product_id] = (
             carts[user_id].get(product_id, 0) + 1
         )
-        await query.answer("Товар добавлен!", show_alert=True)
+        await query.message.reply_text("Товар добавлен в корзину!")
 
     elif data == "cart":
         cart = carts.get(user_id, {})
